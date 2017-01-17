@@ -1,0 +1,20 @@
+{
+  "mockpreview": {
+    "mockUri": "/sap/opu/odata/sap/ZMASS_TIME_TRANSFER_2144_SRV",
+    "metadataFilePath": "",
+    "loadJSONFiles": false,
+    "loadCustomRequests": false,
+    "mockRequestsFilePath": ""
+  },
+  "deploy": {
+    "destination": "FD2",
+    "name": "ZSWFT_MASSPOC"
+  },
+  "generation": [
+    {
+      "templateId": "servicecatalog.connectivityComponent",
+      "templateVersion": "0.0.0",
+      "dateTimeStamp": "Wed, 11 Jan 2017 10:34:06 GMT"
+    }
+  ]
+}

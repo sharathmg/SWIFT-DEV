@@ -1,0 +1,101 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:l="sap.ui.layout" xmlns:core="sap.ui.core" xmlns:f="sap.ui.layout.form">
+		<Panel expandable="true" expanded="true" headerText="Project Information" width="auto" class="panel">
+										<content>
+											<sap.ui.layout.form:SimpleForm xmlns:sap.ui.layout.form="sap.ui.layout.form" xmlns:sap.ui.core="sap.ui.core" class="sapUiSizeCozy"
+												editable="true" layout="ResponsiveGridLayout" labelSpanL="5" labelSpanS="5" labelSpanM="5" emptySpanL="0" emptySpanM="0" columnsL="4"
+												columnsM="4" id="form4">
+												<sap.ui.layout.form:content labelAlign="Left">
+													<!--<core:Title text="Project Information"/>-->
+													<core:Title text=""/>
+													<Label text=" Source Client Number" class="a1"/>
+													<Text text="1930-0291" class="Bold"/>
+													<Label text="Client Name" class="a3"/>
+													<Text text="IBM" class="Bold"/>
+													<core:Title text=""/>
+													<Label text="Contract Type" class="a2"/>
+													<Text text="Time and Materials" class="Bold" width="100%"/>
+													<Label text="Project Type" class="a4" width="100%"/>
+													<Text text="Client Products(CR)" class="Bold" width="150%"/>
+													<core:Icon src="sap-icon://arrow-right" class="arrow"/>
+													<core:Title text=""/>
+													<Label text="Target Client Number" class="c1" width="100%"/>
+													<Text text="1930-0291" class="Bold" width="100%"/>
+													<Label text="Client Name" class="c3" width="100%"/>
+													<Text text="IBM" class="Bold" width="100%"/>
+													<core:Title text=""/>
+													<Label text="Contract Type" class="c2" width="100%"/>
+													<Text text="Time and Materials" class="Bold" width="100%"/>
+													<Label text="Project Type" class="c4" width="100%"/>
+													<Text text="Client Products(CR)" class="Bold" width="100%"/>
+												</sap.ui.layout.form:content>
+											</sap.ui.layout.form:SimpleForm>
+											<sap.ui.layout.form:SimpleForm xmlns:sap.ui.layout.form="sap.ui.layout.form" xmlns:sap.ui.core="sap.ui.core" class="form" editable="true"
+												layout="ResponsiveGridLayout" columnsL="2" columnsM="2" id="subform1">
+												<sap.ui.layout.form:content>
+													<core:Title text=""/>
+													<Label text="Project Description"/>
+													<Text
+														text="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat"/>
+													<core:Title text=""/>
+													<Label text="Project Description"/>
+													<Text
+														text="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat"/>
+												</sap.ui.layout.form:content>
+											</sap.ui.layout.form:SimpleForm>
+										</content>
+									</Panel>
+									<Table id="idProductsTable2">
+										<columns>
+											<Column width="3%">
+												<Title text=" " level="H2" textAlign="Begin"/>
+											</Column>
+											<Column width="13%">
+												<Title text="Source WBS" level="H1" textAlign="Begin"/>
+											</Column>
+											<Column width="3%">
+												<Title text=" " level="H2" textAlign="Begin"/>
+											</Column>
+											<Column width="13%">
+												<Title text="Pricing Condition" level="H1" textAlign="Begin"/>
+											</Column>
+											<Column width="13%">
+												<Title text="Time Transfered" level="H1" textAlign="Begin"/>
+											</Column>
+											<Column width="13%">
+												<Title text="Revenue" level="H1" textAlign="Begin"/>
+											</Column>
+											<Column width="13%">
+												<Title text="Expense Transfered" level="H1" textAlign="Begin"/>
+											</Column>
+											<Column width="3%">
+												<Title text=" " level="H2" textAlign="Begin"/>
+											</Column>
+											<Column width="13%">
+												<Title text="Target WBS" level="H1" textAlign="Begin"/>
+											</Column>
+											<Column width="3%">
+												<Title text=" " level="H2" textAlign="Begin"/>
+											</Column>
+											<Column width="13%">
+												<Title text="Pricing Condition" level="H1" textAlign="Begin"/>
+											</Column>
+										</columns>
+										<items>
+											<ColumnListItem>
+												<sap.ui.core:Icon ariaLabelledBy="title1" src="sap-icon://add" size="1.0em" xmlns:sap.ui.core="sap.ui.core" id="icon4"/>
+												<Text text="{Source WBS}"/>
+												<sap.ui.core:Icon ariaLabelledBy="title1" src="sap-icon://hint" size="1.0em" xmlns:sap.ui.core="sap.ui.core" id="icon0"/>
+												<Text text="{Pricing Condition}"/>
+												<Text text="{Time Transferred}"/>
+												<Text text="{Revenue}"/>
+												<Text text="{Expense Transferred}"/>
+												<sap.ui.core:Icon ariaLabelledBy="title1" src="sap-icon://arrow-right" size="1.1em" xmlns:sap.ui.core="sap.ui.core" id="icon2"/>
+												<Text text="{Target WBS}"/>
+												<sap.ui.core:Icon ariaLabelledBy="title1" src="sap-icon://hint" size="1.0em" xmlns:sap.ui.core="sap.ui.core" id="icon1"/>
+												<Text text="{Pricing Condition}"/>
+												<cells/>
+											</ColumnListItem>
+										</items>
+									</Table>
+	
+	</core:FragmentDefinition>

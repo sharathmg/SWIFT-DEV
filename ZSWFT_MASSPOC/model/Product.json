@@ -1,0 +1,75 @@
+{"ItemSet": [{
+					"Source WBS": "BE01192-90-26-01-156",
+					"Pricing Condition": "60% Discount",
+					"Time Record": "223,000h",
+					"Revenue": "200,000USD",
+					"Expense Record": "100,000USD"
+				}, {
+					"Source WBS": "BE01192-90-26-01-357",
+					"Pricing Condition": "45% ESU",
+					"Time Record": "2000h",
+					"Revenue": "200,000USD",
+					"Expense Record": "100,000USD"
+
+				}, {
+					"Source WBS":"BE01192-90-26-01-358",
+					"Pricing Condition": "45% ESU",
+					"Time Record": "1000h",
+					"Revenue": "200,000USD",
+					"Expense Record": "1,000,000USD"
+
+				}],
+				
+				
+"Set": [{
+					"Source WBS": "BE01192-90-26-01-156",
+					"Pricing Condition": "60% Discount",
+					"Time Transferred": "223,000h",
+					"Revenue": "200,000USD",
+					"Expense Transferred": "100,000USD",
+					"Target WBS":"UID01192-90-26-01-1562"
+				}, {
+					"Source WBS": "BE01192-90-26-01-357",
+					"Pricing Condition": "45% ESU",
+					"Time Transferred": "2000h",
+					"Revenue": "200,000USD",
+					"Expense Transferred": "100,000USD",
+					"Target WBS":"UID01192-90-26-01-200"
+
+				}, {
+					"Source WBS":"BE01192-90-26-01-358",
+					"Pricing Condition": "45% ESU",
+					"Time Transferred": "1000h",
+					"Revenue": "200,000USD",
+					"Expense Transferred": "1,000,000USD",
+					"Target WBS":"UID01192-90-26-01-200"
+
+				}],
+				
+				
+				
+	"Items" : [
+	{   "key":"1",
+		"name": "Transfer T&E to a new project-Whole WBS to different client"
+	},
+	{"key":"2",
+	"name": "Transfer T&E to a new project-WBS line items to different client"
+	},
+	{"key":"3",
+	"name": "Transfer T&E to a new project-Whole WBS to same client"
+	},
+	{"key":"4",
+	"name": "Transfer T&E to a new project-WBS line items to same client"
+	},
+	{"key":"5",
+	"name": "Transfer T&E within a project"
+	},
+	{"key":"6",
+	"name": "Transfer T&E from PRD to billabe engagement"
+	},
+	{"key":"7",
+	"name": "internal non-billable to internal non-billable transfers"
+	}
+]
+	
+}

@@ -1,0 +1,70 @@
+<mvc:View controllerName="MassTimeTransferENH.controller.TimeTransferHome" xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:l="sap.ui.layout">
+	<App>
+		<pages>
+			<Page title="{i18n>title}" class="page">
+				<customHeader>
+					<Bar>
+						<contentLeft>
+							<Label text="{i18n>transferTypeLabel}:" class="header"/>
+							<!-- Sharath -maintain texts in i18n file and assign the variable here -->
+							<Text text="Transfer T E to a new project-whole WBS to different client" class="Bold"/>
+						</contentLeft>
+						<contentRight class="close">
+							<sap.ui.core:Icon xmlns:sap.ui.core="sap.ui.core" ariaLabelledBy="title1" src="sap-icon://decline" press="close" size="1.2em"
+								class="close"/>
+						</contentRight>
+					</Bar>
+				</customHeader>
+				<content>
+					<IconTabBar id="idIconTabBarSeparatorIcon">
+						<items>
+							<IconTabFilter text="Transfer Type" icon="sap-icon://customfont/tagspecial" iconColor="Positive" key="Transfer_Type" id="icontab_transfer">
+								<content>
+									<core:Fragment xmlns:core="sap.ui.core" fragmentName="MassTimeTransferENH.view.TransferTypeFragment" type="XML" id="fragIconTabTransferType"/>
+								</content>
+							</IconTabFilter>
+							<IconTabSeparator icon="sap-icon://customfont/twosidearrow" class="twosidearrow"/>
+							<!--<IconTabFilter text="Projects" icon="sap-icon://multiselect-none" iconColor="Positive" key="Projects" id="icontab_projects" enabled="false">-->
+							<IconTabFilter text="Projects" icon="sap-icon://customfont/multispecial" iconColor="Positive" key="Projects" id="icontab_projects"
+								enabled="false">
+								<content>
+									<core:Fragment xmlns:core="sap.ui.core" fragmentName="MassTimeTransferENH.view.ProjectsFragment" type="XML" id="fragIconTabProjects"/>
+								</content>
+							</IconTabFilter>
+							<IconTabSeparator icon="sap-icon://customfont/twosidearrow"/>
+							<!--<IconTabFilter text="Results" icon="sap-icon://list" iconColor="Positive" key="Results" id="icontab_results" enabled="false">-->
+							<IconTabFilter text="Results" icon="sap-icon://customfont/listspecial" iconColor="Positive" key="Results" id="icontab_results"
+								enabled="false">
+								<content>
+								<core:Fragment xmlns:core="sap.ui.core" fragmentName="MassTimeTransferENH.view.ResultsFragment" type="XML" id="fragIconTabResults"/>
+								</content>
+							</IconTabFilter>
+							<IconTabSeparator icon="sap-icon://customfont/twosidearrow"/>
+							<!--<IconTabFilter id="icontab_summary" text="Summary" icon="sap-icon://activity-items" iconColor="Positive" key="Summary" enabled="false">-->
+							<IconTabFilter text="Summary" icon="sap-icon://customfont/summarycust" iconColor="Positive" key="Summary" enabled="false"
+								id="icontab_summary">
+								<content>
+								<core:Fragment xmlns:core="sap.ui.core" fragmentName="MassTimeTransferENH.view.SummaryFragment" type="XML" id="fragIconTabSummary"/>
+								</content>
+							</IconTabFilter>
+						</items>
+					</IconTabBar>
+				</content>
+				<footer>
+					<Bar id="bar3" class="background" design="Header">
+						<!--<contentLeft>
+							<MessageStrip text=" Warning: Fill the required fields" type="Warning" showIcon="true" showCloseButton="true" class="sapUiMediumMarginBottom"></MessageStrip>
+						</contentLeft>-->
+						<contentRight>
+							<Button text="Reset" press="onPressReset" visible="false" id="resetId" class="button1"/>
+							<Button text="Back" press="onPressBack" visible="false" id="backId" class="button2"/>
+							<Button text="Continue" press="onPressContinue" visible="true" id="continue" class="button"/>
+							<Button text="Execute" press="onPressExecute" visible="false" id="execute" class="button"/>
+						</contentRight>
+					</Bar>
+				</footer>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

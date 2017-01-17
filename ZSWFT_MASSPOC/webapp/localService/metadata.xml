@@ -1,0 +1,230 @@
+<edmx:Edmx
+    xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx"
+    xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata"
+    xmlns:sap="http://www.sap.com/Protocols/SAPData" Version="1.0">
+    <edmx:DataServices m:DataServiceVersion="2.0">
+        <Schema
+            xmlns="http://schemas.microsoft.com/ado/2008/09/edm" Namespace="ZMASS_TIME_TRANSFER_2144_SRV" xml:lang="en" sap:schema-version="1">
+            <EntityType Name="TransferTypes" sap:label="Get Transfer Types" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="TRANSFERID"/>
+                </Key>
+                <Property Name="TRANSFERID" Type="Edm.String" Nullable="false" sap:label="Transfer ID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="TRANSFER_TYPES" Type="Edm.String" Nullable="false" sap:label="Transfer Types" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="COUNTRY" Type="Edm.String" Nullable="false" sap:label="Country" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="USERID" Type="Edm.String" Nullable="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <NavigationProperty Name="TargetProject" Relationship="ZMASS_TIME_TRANSFER_2144_SRV.Association_TargetProject" FromRole="FromRole_Association_TargetProject" ToRole="ToRole_Association_TargetProject"/>
+                <NavigationProperty Name="SourceProject" Relationship="ZMASS_TIME_TRANSFER_2144_SRV.Association_SourceProject" FromRole="FromRole_Association_SourceProject" ToRole="ToRole_Association_SourceProject"/>
+            </EntityType>
+            <EntityType Name="SourceProject" sap:label="Get Source Projects" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="SOURCE_PRJ"/>
+                </Key>
+                <Property Name="TRANSFERID" Type="Edm.String" Nullable="false" sap:label="Transfer ID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="SOURCE_PRJ" Type="Edm.String" Nullable="false" sap:label="Source Project" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="SOURCE_PRJ_DESC" Type="Edm.String" Nullable="false" sap:label="Source Project Description" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <NavigationProperty Name="TransferTypes" Relationship="ZMASS_TIME_TRANSFER_2144_SRV.Association_SourceProject" FromRole="ToRole_Association_SourceProject" ToRole="FromRole_Association_SourceProject"/>
+                <NavigationProperty Name="SHeader_Details" Relationship="ZMASS_TIME_TRANSFER_2144_SRV.Association_SHeader_Details" FromRole="FromRole_Association_SHeader_Details" ToRole="ToRole_Association_SHeader_Details"/>
+                <NavigationProperty Name="SItem_Details" Relationship="ZMASS_TIME_TRANSFER_2144_SRV.Association_SItem_Details" FromRole="FromRole_Association_SItem_Details" ToRole="ToRole_Association_SItem_Details"/>
+            </EntityType>
+            <EntityType Name="TargetProject" sap:label="Get Target Project" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="TARGET_PRJ"/>
+                </Key>
+                <Property Name="TRANSFERID" Type="Edm.String" Nullable="false" sap:label="Transfer ID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="TARGET_PRJ" Type="Edm.String" Nullable="false" sap:label="Transfer Project" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="TARGET_PRJ_DESC" Type="Edm.String" Nullable="false" sap:label="Transfer Project Description" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <NavigationProperty Name="TransferTypes_Target" Relationship="ZMASS_TIME_TRANSFER_2144_SRV.Association_TargetProject" FromRole="ToRole_Association_TargetProject" ToRole="FromRole_Association_TargetProject"/>
+                <NavigationProperty Name="THeader_Details" Relationship="ZMASS_TIME_TRANSFER_2144_SRV.Association_THeader_Details" FromRole="FromRole_Association_THeader_Details" ToRole="ToRole_Association_THeader_Details"/>
+                <NavigationProperty Name="TItem_Details" Relationship="ZMASS_TIME_TRANSFER_2144_SRV.Association_TItem_Details" FromRole="FromRole_Association_TItem_Details" ToRole="ToRole_Association_TItem_Details"/>
+            </EntityType>
+            <EntityType Name="TransferReasons" sap:label="Get Transfer Reasons" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="REASONID"/>
+                    <PropertyRef Name="TRANSFER_REASON"/>
+                </Key>
+                <Property Name="REASONID" Type="Edm.String" Nullable="false" sap:label="Reason ID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="TRANSFER_REASON" Type="Edm.String" Nullable="false" sap:label="Transfer Reasons" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="HeaderDetails" sap:label="Get Header Details" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="PROJECT"/>
+                </Key>
+                <Property Name="PROJECT" Type="Edm.String" Nullable="false" sap:label="Project" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="CLIENT_NO" Type="Edm.String" Nullable="false" sap:label="Client no" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="CLIENT_NAME" Type="Edm.String" Nullable="false" sap:label="Client name" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="CONTRACT_TYPE" Type="Edm.String" Nullable="false" sap:label="Contract Type" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="PROJECT_TYPE" Type="Edm.String" Nullable="false" sap:label="Project Type" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="PROJECT_DESC" Type="Edm.String" Nullable="false" sap:label="Project Description" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <NavigationProperty Name="Source_Project_Header" Relationship="ZMASS_TIME_TRANSFER_2144_SRV.Association_SHeader_Details" FromRole="ToRole_Association_SHeader_Details" ToRole="FromRole_Association_SHeader_Details"/>
+                <NavigationProperty Name="Target_Project_Header" Relationship="ZMASS_TIME_TRANSFER_2144_SRV.Association_THeader_Details" FromRole="ToRole_Association_THeader_Details" ToRole="FromRole_Association_THeader_Details"/>
+            </EntityType>
+            <EntityType Name="TargetItems" sap:label="Get Target Items" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="WBS"/>
+                </Key>
+                <Property Name="PROJECT" Type="Edm.String" Nullable="false" sap:label="Project" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="WBS" Type="Edm.String" Nullable="false" sap:label="Project WBS" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="PRICING_COND" Type="Edm.String" Nullable="false" sap:label="Pricing Condition" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="WBS_DESC" Type="Edm.String" Nullable="false" sap:label="WBS Description" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="USER_STATUS" Type="Edm.String" Nullable="false" sap:label="User Status" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="SYSTEM_STATUS" Type="Edm.String" Nullable="false" sap:label="System Status" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <NavigationProperty Name="Target_Project_Item" Relationship="ZMASS_TIME_TRANSFER_2144_SRV.Association_TItem_Details" FromRole="ToRole_Association_TItem_Details" ToRole="FromRole_Association_TItem_Details"/>
+            </EntityType>
+            <EntityType Name="SourceItems" sap:label="Get Source Items" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Wbs"/>
+                </Key>
+                <Property Name="Project" Type="Edm.String" Nullable="false" MaxLength="24" sap:label="Current proj no" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Wbs" Type="Edm.String" Nullable="false" MaxLength="24" sap:label="WBS element" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="PricingCond" Type="Edm.Decimal" Nullable="false" Precision="12" Scale="3" sap:label="Amount" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Time" Type="Edm.Decimal" Nullable="false" Precision="4" Scale="2" sap:label="Hours" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Revenue" Type="Edm.Decimal" Nullable="false" Precision="16" Scale="3" sap:label="Value/Obj. Crcy" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Expense" Type="Edm.Decimal" Nullable="false" Precision="16" Scale="3" sap:label="Value/Obj. Crcy" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="WbsDesc" Type="Edm.String" Nullable="false" MaxLength="40" sap:label="Description" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="UserStatus" Type="Edm.String" Nullable="false" MaxLength="4" sap:label="Not More Closely Defined Area, Possibly Used for Patchlevels" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="SystemStatus" Type="Edm.String" Nullable="false" MaxLength="4" sap:label="Not More Closely Defined Area, Possibly Used for Patchlevels" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <NavigationProperty Name="SWbs_Details" Relationship="ZMASS_TIME_TRANSFER_2144_SRV.Association_SResource_Details" FromRole="FromRole_Association_SResource_Details" ToRole="ToRole_Association_SResource_Details"/>
+            </EntityType>
+            <EntityType Name="WbsResourceDetails" sap:label="Get WBS Resource Details" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Wbs"/>
+                </Key>
+                <Property Name="Wbs" Type="Edm.String" Nullable="false" MaxLength="24" sap:label="WBS element" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ResourceName" Type="Edm.String" Nullable="false" MaxLength="30" sap:label="Last/First Name" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="PostingDate" Type="Edm.DateTime" Nullable="false" Precision="7" sap:label="Date" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="PricingCond" Type="Edm.Decimal" Nullable="false" Precision="12" Scale="3" sap:label="Amount" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Time" Type="Edm.Decimal" Nullable="false" Precision="4" Scale="2" sap:label="Hours" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Revenue" Type="Edm.Decimal" Nullable="false" Precision="16" Scale="3" sap:label="Value/Obj. Crcy" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Expense" Type="Edm.Decimal" Nullable="false" Precision="16" Scale="3" sap:label="Value/Obj. Crcy" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="WbsDesc" Type="Edm.String" Nullable="false" MaxLength="40" sap:label="Description" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <Association Name="Association_THeader_Details" sap:content-version="1">
+                <End Type="ZMASS_TIME_TRANSFER_2144_SRV.TargetProject" Multiplicity="1" Role="FromRole_Association_THeader_Details"/>
+                <End Type="ZMASS_TIME_TRANSFER_2144_SRV.HeaderDetails" Multiplicity="1" Role="ToRole_Association_THeader_Details"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_Association_THeader_Details">
+                        <PropertyRef Name="TARGET_PRJ"/>
+                    </Principal>
+                    <Dependent Role="ToRole_Association_THeader_Details">
+                        <PropertyRef Name="PROJECT_TYPE"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="Association_TItem_Details" sap:content-version="1">
+                <End Type="ZMASS_TIME_TRANSFER_2144_SRV.TargetProject" Multiplicity="1" Role="FromRole_Association_TItem_Details"/>
+                <End Type="ZMASS_TIME_TRANSFER_2144_SRV.TargetItems" Multiplicity="*" Role="ToRole_Association_TItem_Details"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_Association_TItem_Details">
+                        <PropertyRef Name="TARGET_PRJ"/>
+                    </Principal>
+                    <Dependent Role="ToRole_Association_TItem_Details">
+                        <PropertyRef Name="PROJECT"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="Association_SHeader_Details" sap:content-version="1">
+                <End Type="ZMASS_TIME_TRANSFER_2144_SRV.SourceProject" Multiplicity="1" Role="FromRole_Association_SHeader_Details"/>
+                <End Type="ZMASS_TIME_TRANSFER_2144_SRV.HeaderDetails" Multiplicity="1" Role="ToRole_Association_SHeader_Details"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_Association_SHeader_Details">
+                        <PropertyRef Name="SOURCE_PRJ"/>
+                    </Principal>
+                    <Dependent Role="ToRole_Association_SHeader_Details">
+                        <PropertyRef Name="PROJECT_TYPE"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="Association_SItem_Details" sap:content-version="1">
+                <End Type="ZMASS_TIME_TRANSFER_2144_SRV.SourceProject" Multiplicity="1" Role="FromRole_Association_SItem_Details"/>
+                <End Type="ZMASS_TIME_TRANSFER_2144_SRV.SourceItems" Multiplicity="*" Role="ToRole_Association_SItem_Details"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_Association_SItem_Details">
+                        <PropertyRef Name="SOURCE_PRJ"/>
+                    </Principal>
+                    <Dependent Role="ToRole_Association_SItem_Details">
+                        <PropertyRef Name="Project"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="Association_TargetProject" sap:content-version="1">
+                <End Type="ZMASS_TIME_TRANSFER_2144_SRV.TransferTypes" Multiplicity="1" Role="FromRole_Association_TargetProject"/>
+                <End Type="ZMASS_TIME_TRANSFER_2144_SRV.TargetProject" Multiplicity="*" Role="ToRole_Association_TargetProject"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_Association_TargetProject">
+                        <PropertyRef Name="TRANSFERID"/>
+                    </Principal>
+                    <Dependent Role="ToRole_Association_TargetProject">
+                        <PropertyRef Name="TRANSFERID"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="Association_SourceProject" sap:content-version="1">
+                <End Type="ZMASS_TIME_TRANSFER_2144_SRV.TransferTypes" Multiplicity="1" Role="FromRole_Association_SourceProject"/>
+                <End Type="ZMASS_TIME_TRANSFER_2144_SRV.SourceProject" Multiplicity="*" Role="ToRole_Association_SourceProject"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_Association_SourceProject">
+                        <PropertyRef Name="TRANSFERID"/>
+                    </Principal>
+                    <Dependent Role="ToRole_Association_SourceProject">
+                        <PropertyRef Name="TRANSFERID"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="Association_SResource_Details" sap:content-version="1">
+                <End Type="ZMASS_TIME_TRANSFER_2144_SRV.SourceItems" Multiplicity="1" Role="FromRole_Association_SResource_Details"/>
+                <End Type="ZMASS_TIME_TRANSFER_2144_SRV.WbsResourceDetails" Multiplicity="*" Role="ToRole_Association_SResource_Details"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_Association_SResource_Details">
+                        <PropertyRef Name="Wbs"/>
+                    </Principal>
+                    <Dependent Role="ToRole_Association_SResource_Details">
+                        <PropertyRef Name="Wbs"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <EntityContainer Name="ZMASS_TIME_TRANSFER_2144_SRV_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx">
+                <EntitySet Name="TransferTypesSet" EntityType="ZMASS_TIME_TRANSFER_2144_SRV.TransferTypes" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="SourceProjectSet" EntityType="ZMASS_TIME_TRANSFER_2144_SRV.SourceProject" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="TargetProjectSet" EntityType="ZMASS_TIME_TRANSFER_2144_SRV.TargetProject" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="TransferReasonsSet" EntityType="ZMASS_TIME_TRANSFER_2144_SRV.TransferReasons" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="HeaderDetailsSet" EntityType="ZMASS_TIME_TRANSFER_2144_SRV.HeaderDetails" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="TargetItemsSet" EntityType="ZMASS_TIME_TRANSFER_2144_SRV.TargetItems" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="SourceItemsSet" EntityType="ZMASS_TIME_TRANSFER_2144_SRV.SourceItems" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="WbsResourceDetailsSet" EntityType="ZMASS_TIME_TRANSFER_2144_SRV.WbsResourceDetails" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <AssociationSet Name="Association_SResource_DetailsSet" Association="ZMASS_TIME_TRANSFER_2144_SRV.Association_SResource_Details" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="SourceItemsSet" Role="FromRole_Association_SResource_Details"/>
+                    <End EntitySet="WbsResourceDetailsSet" Role="ToRole_Association_SResource_Details"/>
+                </AssociationSet>
+                <AssociationSet Name="Association_SourceProjectSet" Association="ZMASS_TIME_TRANSFER_2144_SRV.Association_SourceProject" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="TransferTypesSet" Role="FromRole_Association_SourceProject"/>
+                    <End EntitySet="SourceProjectSet" Role="ToRole_Association_SourceProject"/>
+                </AssociationSet>
+                <AssociationSet Name="Association_TItem_DetailsSet" Association="ZMASS_TIME_TRANSFER_2144_SRV.Association_TItem_Details" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="TargetProjectSet" Role="FromRole_Association_TItem_Details"/>
+                    <End EntitySet="TargetItemsSet" Role="ToRole_Association_TItem_Details"/>
+                </AssociationSet>
+                <AssociationSet Name="Association_THeader_DetailsSet" Association="ZMASS_TIME_TRANSFER_2144_SRV.Association_THeader_Details" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="TargetProjectSet" Role="FromRole_Association_THeader_Details"/>
+                    <End EntitySet="HeaderDetailsSet" Role="ToRole_Association_THeader_Details"/>
+                </AssociationSet>
+                <AssociationSet Name="Association_SHeader_DetailsSet" Association="ZMASS_TIME_TRANSFER_2144_SRV.Association_SHeader_Details" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="SourceProjectSet" Role="FromRole_Association_SHeader_Details"/>
+                    <End EntitySet="HeaderDetailsSet" Role="ToRole_Association_SHeader_Details"/>
+                </AssociationSet>
+                <AssociationSet Name="Association_TargetProjectSet" Association="ZMASS_TIME_TRANSFER_2144_SRV.Association_TargetProject" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="TransferTypesSet" Role="FromRole_Association_TargetProject"/>
+                    <End EntitySet="TargetProjectSet" Role="ToRole_Association_TargetProject"/>
+                </AssociationSet>
+                <AssociationSet Name="Association_SItem_DetailsSet" Association="ZMASS_TIME_TRANSFER_2144_SRV.Association_SItem_Details" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="SourceProjectSet" Role="FromRole_Association_SItem_Details"/>
+                    <End EntitySet="SourceItemsSet" Role="ToRole_Association_SItem_Details"/>
+                </AssociationSet>
+            </EntityContainer>
+            <atom:link
+                xmlns:atom="http://www.w3.org/2005/Atom" rel="self" href="https://USWASFDD.DELOITTE.COM:443/sap/opu/odata/sap/ZMASS_TIME_TRANSFER_2144_SRV/$metadata"/>
+                <atom:link
+                    xmlns:atom="http://www.w3.org/2005/Atom" rel="latest-version" href="https://USWASFDD.DELOITTE.COM:443/sap/opu/odata/sap/ZMASS_TIME_TRANSFER_2144_SRV/$metadata"/>
+                </Schema>
+            </edmx:DataServices>
+        </edmx:Edmx>

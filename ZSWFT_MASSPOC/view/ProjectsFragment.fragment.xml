@@ -1,0 +1,77 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:l="sap.ui.layout" xmlns:core="sap.ui.core" xmlns:f="sap.ui.layout.form">
+		<sap.ui.layout.form:SimpleForm xmlns:sap.ui.layout.form="sap.ui.layout.form" xmlns:sap.ui.core="sap.ui.core" class="sapUiSizeCozy"
+										editable="true" layout="ResponsiveGridLayout" id="form2" columnsL="1" columnsM="1">
+										<sap.ui.layout.form:content>
+											<!--<l:VerticalLayout class="sapUiSmallMargin" >-->
+											<Label width="100%" id="srcpjct" text="{i18n>sourceProjLabel}" design="Bold"/>
+											<!--<SearchField width="50%"/>-->
+											<SearchField type="Text" enableSuggestions="true" width="50%" suggest="onMaterialSuggest" suggestionItems="{path: '/SourceProjectSet'}">
+												<suggestionItems>
+													<SuggestionItem text="{SOURCE_PRJ}" description="{SOURCE_PRJ_DESC}" key="{TRANSFERID}"/>
+												</suggestionItems>
+											</SearchField>
+											<Label text="" class="label1"/>
+											<!--<l:VerticalLayout class="sapUiSmallMargin" >-->
+											<l:HorizontalLayout class="sapUiSmallMargin" editable="true">
+												<HBox>
+													<Label text="{i18n>clientNumberLabel}" class="labelallign1"/>
+													<Text text="1930-0291" class="Bold"/>
+												</HBox>
+												<HBox>
+													<Label text="{i18n>contractTypeLabel}" class="labelallign1"/>
+													<Text text=" Time and Materials" class="Bold"/>
+												</HBox>
+											</l:HorizontalLayout>
+											<Label text="" class="label1"/>
+											<l:HorizontalLayout class="targetlayout" editable="true">
+												<HBox>
+													<Label text="{i18n>clientNameLabel}" class="labelallign1"/>
+													<Text text="IBM" class="Bold"/>
+												</HBox>
+												<HBox>
+													<Label text="{i18n>projectTypeLabel}" class="labelallign1"/>
+													<Text text=" Client Products(CR)" class="Bold"/>
+												</HBox>
+											</l:HorizontalLayout>
+											<!--</l:VerticalLayout>-->
+											<Label width="100%" id="tgtpjct" text="{i18n>targetProjLabel}" design="Bold"/>
+											<SearchField type="Text" enableSuggestions="true" width="50%" suggest="onMaterialSuggest" suggestionItems="{path: '/TargetProjectSet'}">
+												<suggestionItems>
+													<SuggestionItem text="{TARGET_PRJ}" description="{TARGET_PRJ_DESC}" key="{TRANSFERID}"/>
+												</suggestionItems>
+											</SearchField>
+											<Label text=""/>
+											<l:HorizontalLayout class="sapUiSmallMargin" labelAlign="Begin">
+												<HBox class="hbox">
+													<Label text="{i18n>clientNumberLabel}" class="labelallign"/>
+													<Text text="1930-0291" class="Bold"/>
+												</HBox>
+												<HBox class="hbox">
+													<Label text="{i18n>contractTypeLabel}" class="labelallign"/>
+													<Text text=" Time and Materials" class="Bold"/>
+												</HBox>
+											</l:HorizontalLayout>
+											<Label text=""/>
+											<l:HorizontalLayout class="sapUiSmallMargin">
+												<HBox class="hbox">
+													<Label text="{i18n>clientNameLabel}" class="labelallign"/>
+													<Text text="IBM" class="Bold"/>
+												</HBox>
+												<HBox class="hbox">
+													<Label text="{i18n>projectTypeLabel}" class="labelallign1"/>
+													<Text text=" Client Products(CR)" class="Bold"/>
+												</HBox>
+											</l:HorizontalLayout>
+											<Label width="100%" id="tfrrsn" text="{i18n>transferReasonLabel}" design="Bold"/>
+											<!--<ActionSelect width="50%"/>-->
+											<ComboBox xmlns="sap.m" id="comboFAUF" width="50%" selectionChange="comboFAUFChanged" items="{path: '/TransferReasonsSet'}"
+												templateShareable="true">
+												<items>
+													<Item xmlns="sap.ui.core" key="{REASONID}" text="{TRANSFER_REASON}"/>
+												</items>
+											</ComboBox>
+											<!--</l:VerticalLayout>-->
+										</sap.ui.layout.form:content>
+									</sap.ui.layout.form:SimpleForm>
+	
+	</core:FragmentDefinition>

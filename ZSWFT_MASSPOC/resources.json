@@ -1,0 +1,57 @@
+{
+    "resources": [
+        {
+            "name": "model/models.js"
+        },
+        {
+            "name": "model/Product.json"
+        },
+        {
+            "name": "Ic_back.svg"
+        },
+        {
+            "name": "i18n/i18n.properties",
+            "raw": "i18n/i18n.properties"
+        },
+        {
+            "name": "index.html"
+        },
+        {
+            "name": "view/IconTabFragment.fragment.xml"
+        },
+        {
+            "name": "view/TimeTransferHome.view.xml"
+        },
+        {
+            "name": "fragments/IconTabFragment.xml"
+        },
+        {
+            "name": "controller/TimeTransferHome.controller.js"
+        },
+        {
+            "name": "manifest.json"
+        },
+        {
+            "name": "css/style.css"
+        },
+        {
+            "name": "Assets/OpenSans-Semibold.ttf"
+        },
+        {
+            "name": "css/deloitte-special-use-icon-font.ttf"
+        },
+        {
+            "name": "css/deloitte-special_font-v2.ttf"
+        },
+        {
+            "name": "Component.js"
+        },
+        {
+            "name": "Component-preload.js",
+            "merged": true
+        },
+        {
+            "name": "neo-app.json"
+        }
+    ]
+}
